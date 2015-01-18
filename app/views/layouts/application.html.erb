@@ -6,18 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= link_to 'Welcome', root_path %>
-  <%= link_to 'Index', welcome_index_path %>
-   <%= link_to 'About Us', welcome_about_path %>
-  <%= link_to 'Contact', welcome_contact_path %>
-   <%= link_to 'FAQ', welcome_faq_path %>
-  <%= link_to 'Pricing', welcome_pricing_path %>
-  <%= link_to 'Invoices', invoices_path %>
-  <%= link_to 'Features', welcome_features_path %>
   
-  
-<%= yield %>
 
+<body>
+   <div class="container">
+     <ul class="nav nav-tabs">
+        <li><%= link_to 'Welcome', root_path %></li>
+        <li><%= link_to 'Index', welcome_index_path %></li>
+        <li><%= link_to 'About Us', welcome_about_path %></li>
+        <li><%= link_to 'Contact', welcome_contact_path %></li>
+        <li><%= link_to 'FAQ', welcome_faq_path %></li>
+        <li><%= link_to 'Pricing', welcome_pricing_path %></li>
+        <li><%= link_to 'Invoices', invoices_path %></li>
+        <li><%= link_to 'Features', welcome_features_path %></li>
+     </ul>
+
+  
+  
+    <%= yield %>
+  </div>
 </body>
 </html>
