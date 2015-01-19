@@ -1,7 +1,7 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
-  # GET /invoices
+  # GET /invoiceswere
   # GET /invoices.json
   def index
     @search = InvoiceSearch.new(params[:search])
