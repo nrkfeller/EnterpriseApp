@@ -38,8 +38,8 @@
     <%= submit_tag 'Upload Companies' %>
 <% end %>
 
-
-
+<h3>Download File</h3>
+<%= link_to "Report", companies_path(format: "csv"), class: 'btn btn-default' %>
 
 
 <%= link_to 'New Company', new_company_path %>
