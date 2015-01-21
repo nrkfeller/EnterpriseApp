@@ -36,7 +36,7 @@ class CompaniesController < ApplicationController
     respond_with(@company)
   end
   
-  def import
+  def import #is this real?
     Company.import(params[:file])
     redirect_to companies_path, notice: 'Companies added successfully'
   end
