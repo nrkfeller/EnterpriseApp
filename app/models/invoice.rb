@@ -1,3 +1,3 @@
 class Invoice < ActiveRecord::Base
-  belongs_to :saleperson
+  belongs_to :employee
 end
