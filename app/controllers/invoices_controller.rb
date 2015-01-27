@@ -1,10 +1,10 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
-  # GET /invoiceswere
+  # GET /invoices
   # GET /invoices.json
   def index
-    @search = InvoiceSearch.new(params[:search]) 
+    @search = InvoiceSearch.new(params[:search])
     @invoices = @search.scope
   end
 
@@ -32,9 +32,9 @@ class InvoicesController < ApplicationController
     respond_to do |format|
       if @invoice.save
         format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
-        format.json { render :show, status: :created, location: @invoice }
+        format.json { render action: 'show', status: :created, location: @invoice }
       else
-        format.html { render :new }
+        format.html { render action: 'new' }
         format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
@@ -46,9 +46,9 @@ class InvoicesController < ApplicationController
     respond_to do |format|
       if @invoice.update(invoice_params)
         format.html { redirect_to @invoice, notice: 'Invoice was successfully updated.' }
-        format.json { render :show, status: :ok, location: @invoice }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: 'edit' }
         format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
@@ -59,7 +59,7 @@ class InvoicesController < ApplicationController
   def destroy
     @invoice.destroy
     respond_to do |format|
-      format.html { redirect_to invoices_url, notice: 'Invoice was successfully destroyed.' }
+      format.html { redirect_to invoices_url }
       format.json { head :no_content }
     end
   end
