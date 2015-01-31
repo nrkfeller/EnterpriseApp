@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   
   resources :invoices do
     resources :purchases, except: [:index], controller: 'invoices/purchases'
-  end #invoices has resources, because resources uses a REST, integrated approach to routing for certain actions. This is for classic resources only.
-  
-  root to: 'welcome#index' #root is the homepage. We need the name of the controller and the # sign with the method name.
+  end
 
+  root to: 'welcome#index'
+  
 end

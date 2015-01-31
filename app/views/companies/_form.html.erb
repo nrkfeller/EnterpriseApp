@@ -4,8 +4,8 @@
       <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
       <ul>
-      <% @company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
